@@ -1,0 +1,14 @@
+<?php
+
+//declare variable
+$global_variable=10;
+
+function accessVariable()
+{
+	//make a variable global for this function
+	global $global_variable; 
+	echo $global_variable;
+}
+
+accessVariable();
+?>
