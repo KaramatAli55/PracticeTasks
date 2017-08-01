@@ -1,0 +1,41 @@
+<?php
+
+/**
+*
+*singleton pattern example
+*/
+class SingletonClass{
+  /**
+  *
+  *static attribute of the class which will hold the object of the class
+  */
+   private static $instance=null;
+   /**
+   *
+   *private constructor so that we can hide the creation of the class
+   */
+   private function SingletonClass(){
+   }
+   /**
+   *
+   *satic method for object creation and assign the object in the static field of the class
+   */
+   public static function getInstance(){
+     //check if instance is alrady ini
+     if(self::$instance==null){
+        return self::$instance=new SingletonClass();
+     }
+     else{
+       return self::$instance;
+     }
+   }
+   public function display(){
+     echo "I am SingletonClass ";
+   }
+}
+//get the instance of the singleton class and call the display method
+$obj=SingletonClass::getInstance();
+$obj->display();
+
+ ?>
+

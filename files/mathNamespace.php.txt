@@ -1,0 +1,51 @@
+<?php
+
+/**
+*declare namespace
+*/
+namespace math;
+/**
+*function will sum the two number
+*@param $x int .first number you want to add
+*@param $x int .first number you want to add
+*@return int .it will return the sum of two number
+*/
+function sum($x,$y)
+{
+  return $x+$y;
+}
+
+/**
+*function will subract the two number
+*@param $x int .first number you want to subract
+*@param $x int .first number you want to subract
+*@return int .it will return the differnec of two number
+*/
+function sub($x,$y)
+{
+  return $x-$y;
+}
+
+/**
+*function will multiply the two number
+*@param $x int .first number you want to multiply
+*@param $x int .first number you want to multiply
+*@return int .it will return the multiplication of two number
+*/
+function mul($x,$y)
+{
+  return $x*$y;
+}
+
+/**
+*function will divide the two number
+*@param $x int .first number you want to divide
+*@param $x int .first number you want to divide
+*@return int .it will return the division of two number
+*/
+function div($x,$y)
+{
+  return $x/$y;
+}
+ ?>
+

@@ -1,0 +1,122 @@
+<?php
+/**
+*
+*example of how to create abstract class and how to override the function etc...
+*/
+abstract class Person{
+/**
+*
+*attribute of the class
+*/
+  private $id;
+  private $name;
+/**
+*
+*default constructor of the class which assign the deafult values to the class attribute
+*/
+  public function ClassA(){
+    $this->id=0;
+    $this->name=null;
+  }
+
+/**
+*
+*setters of attribute $id
+*@param $i value to be set in the id field of the class
+*/
+  public function setId($i){
+    $this->id=$i;
+  }
+
+/**
+*
+*stter of the attribute $name
+*@param $n value to be set in the name filed of the class
+*/
+  public function setName($n){
+    $this->name=$n;
+  }
+
+/**
+*
+*getter of the attibute Id
+*@return id of the object
+*/
+  public function getId(){
+    return $this->id;
+  }
+/**
+*
+*getter of the attibute name
+*@return name of the object
+*/
+  public function getName(){
+    return $this->name;
+  }
+
+/**
+*
+*it will display the value of the id and name field of the object
+*/
+  function display(){
+    echo $this->id."<br>";
+    echo $this->name;
+  }
+
+/**
+*
+*abstract method whcih calculate the salary
+*/
+  abstract public function calculateSalary();
+
+}
+
+/**
+*
+*Employee Class which extends an abstract class
+*/
+class Employee extends Person{
+  /**
+  *
+  *attribute of the class
+  */
+  private $workingHours;
+  private $wageRate;
+
+  /**
+  *
+  *parameterizes constructor of the class which assign the deafult values or provided values to the class attribute
+  */
+  public function Employee($working_hours=0, $wage_rate=0, $n=null, $i=0){
+    $this->workingHours=$working_hours;
+    $this->wageRate=$wage_rate;
+    $this->setName($n);
+    $this->setId($i);
+  }
+
+  /**
+  *
+  *implemenation of abstract function (overriding) it will caluate the salary on the base of working hours and wages rate
+  *@return will return salary of the employee
+  */
+  public function calculateSalary(){
+     return $this->workingHours*$this->wageRate;
+  }
+
+  /**
+  *
+  *it will show all deatil of the employee
+  */
+  public function displayDeatil(){
+    echo parent::getName()." has ".$this->calculateSalary()." salary";
+  }
+
+}
+
+//object creation
+$obj=new Employee(11, 100, "karamat", 1);
+//function call
+$obj->displayDeatil();
+
+ ?>
+

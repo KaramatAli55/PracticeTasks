@@ -1,0 +1,108 @@
+<?php
+
+/**
+*
+*database insertion code
+*/
+ $server='localhost';
+ $db_user='root';
+ $db_password='123';
+ $db_name='parctice';
+
+/**
+*
+*this will create the connection to the server
+*@param $server name of the server
+*@param $db_user user name of the database
+*@param $db_password password of the database uner
+*@param $db_name name of the database which one you want to to connect
+*@return it will return the connection variable
+*/
+ $conn=new mysqli($server,$db_user,$db_password,$db_name);
+ //test connection
+ if(!$conn)
+ {
+ 	die("unable to connect to the database");
+ }
+ //insert query
+ $query="INSERT INTO student(id,name) VALUE(2,'karamat')";
+
+/**
+*Execute the query
+*@param $query query you want to Execute
+*@return it will return true if data successfully inserted in the database
+*/
+ if($conn->query($query))
+ {
+    echo "New record created successfully"."<br>";
+ }
+ else
+ {
+    echo "Record is not inserted";
+ }
+ /**
+ *database select code
+ */
+// query for select data from database
+$selectStatement="SELECT * FROM  student";
+
+/**
+*execution of the query
+*@param $selectStatement this is the query you want to Execute
+*@return it will return the selected row
+*/
+$result=$conn->query($selectStatement);
+if($result->num_rows >0)
+{
+	//iterate on the result to show all rows
+    while($row=$result->fetch_assoc())
+    {
+    	echo "id:".$row["id"]."name:".$row["name"]."<br>";
+    }
+    echo "<br>";
+}
+
+/**
+*
+*database update code
+*/
+//query for update data in the database
+$updateStatement="update student set  name='shoaib' where id=1";
+
+/**
+*execution of the query
+*@param update query
+*@return it will return true if record in the database updated
+*/
+ if($conn->query($updateStatement))
+ {
+    echo "Record update successfully"."<br>";
+ }
+ else
+ {
+ 	echo"updation error"."<br>";
+ }
+
+ /**
+ *
+ *database deletion code
+ */
+ $deleteStatement="delete from student where id=2";
+
+ /**
+ *execution of the query
+ *@param delete query
+ *@return it will return true if record in the database deleted
+ */
+ if($conn->query($deleteStatement))
+ {
+    echo "Record deleted successfully"."<br>";
+ }
+ else
+ {
+ 	echo"deletion error"."<br>";
+ }
+
+
+?>
+
