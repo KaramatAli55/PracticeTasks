@@ -1,0 +1,36 @@
+<?php
+
+//string declartion
+$x="karamat";
+echo "string value is : ";
+echo $x;
+echo "<br>";
+
+//integer declartion
+$y=95;
+echo "Integer value is :";
+echo $y;
+echo "<br>";
+
+//Array declartion
+$studentName=array("shoaib","javed","bilal");
+$arrCount=count($studentName);
+echo"my friends are :"."<br>";
+/**
+*it will ittrate the array and display array values
+*/
+for($i=0; $i<$arrCount; $i++)
+{
+    echo $studentName[$i]."<br>";
+}
+
+echo "<br>"."Type Casting"."<br>";
+$intA=10;
+/**
+*type casting from integer to string
+*/
+$strA=(string)$intA;
+echo $strA ;
+
+
+?>

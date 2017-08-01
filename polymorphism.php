@@ -1,0 +1,70 @@
+<?php
+
+/**
+*
+*interface class defination
+*/
+interface Shape{
+  /**
+  *
+  *abstarct function
+  */
+  public function calculateArea();
+}
+/**
+*
+*Square class will implement the interface Shape
+*/
+class Square implements Shape{
+  /**
+  *
+  *Attribute of the class
+  */
+private $radius;
+/**
+*
+*parameterized Constrcutor of the class and field declaration
+*/
+public function Square($r){
+  $this->radius=$r;
+}
+
+/**
+*
+*overrided function
+*@return Area of the Square
+*/
+public function calculateArea(){
+  return 3.14*$this->radius*$this->radius;
+}
+}
+
+/**
+*
+*Rectangle class will implement the interface Shape
+*/
+class Rectangle implements Shape{
+public function Rectangle($l, $w){
+  $this->lenght=$l;
+  $this->width=$w;
+}
+
+/**
+*
+*overrided function
+*@return Area of the Rectangle
+*/
+public function calculateArea(){
+  return $this->lenght*$this->width;
+}
+}
+
+//objects creatation and overrided functions calls
+
+$squareObj=new Square(10);
+echo "Area of the square is    :".$squareObj->calculateArea()."<br>";
+
+$rectangleObj=new Rectangle(5, 5);
+echo "Area of the Rectangle is    :".$rectangleObj->calculateArea()."<br>";
+
+ ?>

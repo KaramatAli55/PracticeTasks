@@ -1,0 +1,15 @@
+
+<html>
+<body>
+
+<h1>welcome to php intial</h1>
+
+<?php
+/**
+*it will include the specify file here
+*@param file name tou want to include
+*/
+include("footer.php");
+?>
+</html>
+</body>
